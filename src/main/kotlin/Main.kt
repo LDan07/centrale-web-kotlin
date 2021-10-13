@@ -10,6 +10,39 @@ fun main(args: Array<String>) {
     for(User in Lucie.friends){
         println(User.name)
     }
+
+    println("")
+    Lucie.deletesFriend(Matthieu)
+    println("Amis de Lucie : ")
+    for(User in Lucie.friends){
+        println(User.name)
+    }
+
+    println("")
+    val post1 = Post(Lucie, "Coucou")
+    post1.publishMessage()
+
+    println("")
+    val groupECM = Group("ECM")
+    groupECM.joined(Marie)
+    groupECM.joined(Lucie)
+    println("Membres du groupe ECM : ")
+    for(User in groupECM.members){
+        println(User.name)
+    }
+    println("Groupes dont Marie fait partie : ")
+    for(group in Marie.groups){
+        println(group)
+    }
+
+
+    println("")
+    groupECM.quited(Lucie)
+    println("Membres du groupe ECM : ")
+    for(User in groupECM.members){
+        println(User.name)
+    }
+
     // Try adding program arguments at Run/Debug configuration
     //println("Program arguments: ${args.joinToString()}")
 }
